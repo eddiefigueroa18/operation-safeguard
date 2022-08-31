@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//*EF
 
 var characterLength = 8; 
 var choiceArr = [];
@@ -19,14 +18,14 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   if (correctPrompts) { 
-     var newpassword = generatePassword();
+     var newPassword = generatePassword();
      passwordText.value = newPassword;
   } else {
     passwordText.value = "";
   }
 }
 
-function writePassword() {
+function generatePassword() {
   var password = "";
   for(var i = 0; i < characterLength; i++) {
     var randomIndex = Math.floor(Math.random()  * choiceArr.length);
@@ -35,10 +34,7 @@ function writePassword() {
   return password;
 }
 
-
-
-
-function getPromts() {
+function getPrompts() {
   choiceArr = [];
 
   characterLength = parseInt(prompt("How many characters would you like your password to contain? (8 - 128 characters)"));
@@ -47,16 +43,16 @@ function getPromts() {
     window.alert("Character length has to be a number between 8 - 128 digits. Please try again.");
     return false;
   }
-  if (confirm("Click OK to confirm including lowercase characters.")) {
+  if (window.confirm("Click OK to confirm including lowercase characters.")) {
     choiceArr = choiceArr.concat(lowerCaseArr);
   }
-  if (confirm("Click OK to confirm including uppercase characters.")) {
+  if (window.confirm("Click OK to confirm including uppercase characters.")) {
     choiceArr = choiceArr.concat(upperCaseArr);
   }
-  if (confirm("Click OK to confirm including special characters.")) {
+  if (window.confirm("Click OK to confirm including special characters.")) {
     choiceArr = choiceArr.concat(specialCharArr);
   }
-  if (confirm("Click OK to confirm including numeric characters.")) {
+  if (window.confirm("Click OK to confirm including numeric characters.")) {
     choiceArr = choiceArr.concat(numberArr);
   }
   return true;
