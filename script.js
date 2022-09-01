@@ -54,15 +54,8 @@ function getPrompts() {
   }
   if (window.confirm("Click OK to confirm including numeric characters.")) {
     choiceArr = choiceArr.concat(numberArr);
-  }
   return true;
+  } else {
+    window.alert("At leaset one character type must be selected");
+  }
 }
-
-
-
-
-// window.confirm("How many characters would you like your password to contain?");
-// window.confirm("Click OK to confirm including special characters.");
-// window.confirm("Click OK to confirm including numeric characters.");
-// window.confirm("Click OK to confirm including lowercase characters.");
-// window.confirm("Click OK to confirm including uppercase characters.");
